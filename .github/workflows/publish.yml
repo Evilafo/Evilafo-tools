@@ -1,0 +1,41 @@
+name: Publish to PyPI
+
+# Déclenchement du workflow à chaque push sur la branche `main`
+on:
+  push:
+    branches:
+      - main  # Utilise `main` comme branche principale, ajuste si nécessaire
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest  # Utilise un environnement Ubuntu
+
+    steps:
+      # Étape 1: Checkout du code source
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Étape 2: Installer Python
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'  # Choisir la version de Python que tu utilises
+
+      # Étape 3: Installer les dépendances
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install setuptools wheel twine  # Installer les outils nécessaires pour construire et publier
+
+      # Étape 4: Créer la distribution (fichiers .tar.gz et .whl)
+      - name: Build distribution
+        run: |
+          python setup.py sdist bdist_wheel  # Créer les fichiers à uploader sur PyPI
+
+      # Étape 5: Publier sur PyPI
+      - name: Upload package to PyPI
+        env:
+          PYPI_USERNAME: ${{ secrets.PYPI_USERNAME }}  # nom d'utilisateur PyPI (secrète)
+          PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }}  # mot de passe PyPI ou API Token (secrète)
+        run: |
+          twine upload dist/*  # Upload les fichiers générés sur PyPI
