@@ -1,13 +1,15 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='evilafo-tools',  # N'oublie pas de le mettre en minuscules !
+    name='evilafo-tools',  
     version='0.1',
-    packages=find_packages(),  # Cela va automatiquement trouver tes packages Python
+    packages=find_packages(),  # Pour trouver automatiquement les packages Python
     install_requires=[
         'transformers',  
         'torch', 
-        'numpy',  
+        'numpy',
+        'datasets',
+        'scikit-learn'
     ],
     description='A Python library for using BERT and BART',
     long_description=open('README.md').read(),
