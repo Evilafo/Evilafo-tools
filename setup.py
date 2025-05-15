@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='evilafo-tools',
+    name='evilafo-tools',  # N'oublie pas de le mettre en minuscules !
     version='0.1',
-    packages=find_packages(),
+    packages=find_packages(),  # Cela va automatiquement trouver tes packages Python
     install_requires=[
         'transformers',  
         'torch', 
