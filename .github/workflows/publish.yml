@@ -4,11 +4,11 @@ name: Publish to PyPI
 on:
   push:
     branches:
-      - main  # Utilise `main` comme branche principale, ajuste si nécessaire
+      - main  
 
 jobs:
   publish:
-    runs-on: ubuntu-latest  # Utilise un environnement Ubuntu
+    runs-on: ubuntu-latest  
 
     steps:
       # Étape 1: Checkout du code source
@@ -19,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8'  # Choisir la version de Python que tu utilises
+          python-version: '3.8'  
 
       # Étape 3: Installer les dépendances
       - name: Install dependencies
