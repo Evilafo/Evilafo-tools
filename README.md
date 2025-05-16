@@ -24,6 +24,7 @@ La façon la plus simple d'installer **Evilafo-tools** est d'utiliser **pip** :
 pip install Evilafo-tools
 ```
 
+
 ### Installer avec support GPU (optionnel)
 
 Si tu souhaites utiliser la version **GPU** de **PyTorch** pour des performances accrues (notamment pour l’entraînement ou l’inférence sur des modèles de grande taille), tu peux installer les dépendances GPU avec :
