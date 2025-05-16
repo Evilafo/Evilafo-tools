@@ -1,3 +1,4 @@
+import torch
 from transformers import BartTokenizer, BartForConditionalGeneration
 
 class BartModel:
