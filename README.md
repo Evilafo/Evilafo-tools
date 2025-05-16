@@ -73,12 +73,15 @@ model = BertModel()
 model.load_for_question_answering()
 
 # Définir la question et le contexte
-context = "Hugging Face is creating a tool that democratizes AI."
-question = "What is Hugging Face creating?"
+context = "Didier Drogba est un ancien footballeur ivoirien né en 1978, considéré comme l’un des plus grands attaquants africains de l’histoire. Il s’est fait connaître en France avant de devenir une légende à Chelsea, où il a remporté notamment quatre titres de Premier League et la Ligue des Champions en 2012. Capitaine emblématique de la Côte d’Ivoire, il a marqué 65 buts en 105 sélections et a participé à trois Coupes du Monde. En dehors du terrain, il s’est illustré par son engagement humanitaire, notamment pour la paix en Côte d’Ivoire."
+question = "Qui est Didier Drogba?"
 
 # Obtenir la réponse
 answer = model.answer_question(question, context)
-print(f"Answer: {answer}")
+print(f"Réponse: {answer}")
+```
+```bash
+Réponse: un ancien footballeur ivoirien ne en 1978
 ```
 
 ### Exemple de génération de résumé avec BART
@@ -92,9 +95,9 @@ from evilafo_tools.bart_model import BartModel
 model = BartModel()
 
 # Résumer un texte
-text = "Hugging Face is a company that provides machine learning models and datasets. It focuses on democratizing AI."
+text = "Didier Drogba est un ancien footballeur ivoirien né en 1978, considéré comme l’un des plus grands attaquants africains de l’histoire. Il s’est fait connaître en France avant de devenir une légende à Chelsea, où il a remporté notamment quatre titres de Premier League et la Ligue des Champions en 2012. Capitaine emblématique de la Côte d’Ivoire, il a marqué 65 buts en 105 sélections et a participé à trois Coupes du Monde. En dehors du terrain, il s’est illustré par son engagement humanitaire, notamment pour la paix en Côte d’Ivoire."
 summary = model.summarize(text)
-print(f"Summary: {summary}")
+print(f"Résumé: {summary}")
 ```
 
 ## Contribution
@@ -114,3 +117,6 @@ Les contributions sont les bienvenues ! Si tu veux améliorer cette bibliothèqu
 **Evilafo-tools** est distribué sous la licence **MIT**. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 
+---
+
+Emmanuel Evilafo [evilafo.xyz](https://evilafo.xyz)
